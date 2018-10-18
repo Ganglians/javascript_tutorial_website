@@ -28,6 +28,7 @@
       /* SOCIAL STYLES */
       .social-link {
         background: rgba(150, 150, 150, 0.5);
+        border-radius: 99px;
         color: #00f; /* blue */
         display: inline-block;
         height: 36px;
@@ -42,6 +43,7 @@
 
       .social-list > li { /* child selector */
         display: inline-block;
+        margin: 0 0.5em;
       }
      
       /* BIO STYLES */
@@ -50,12 +52,20 @@
         box-sizing: border-box;
         float: left;
         font-size: 1rem;
-        padding: 2%;
-        width: 25%;
+        margin: 40px 1% 0; /* top=40px, left=1%, bottom=0, right=1%(fill) */
+        padding: 0 2% 2%;
+        width: 23%; /* fit in one row i.e. 25% - 1% - 1% from margin */
       }
 
       .bio-box h3 {
+        color: #fff;
         font-size: 1.5em;
+        margin: -40px 0 1em;
+        text-align: center;
+      }
+
+      .bio-box img {
+        width: 100%;
       }
 
       .bio-copy {
@@ -64,11 +74,15 @@
  
       .bio-copy a {
         color: #008000; /* green */
+        padding: 20px;
       }
       
       .bio-wrapper {
         font-size: 24px;
+       /* margin: auto; */
+        max-width: 960px;
         overflow: hidden;
+        margin: 0 auto 1em;
       }
 
       .bio-wrapper:after {
@@ -87,13 +101,13 @@
       <h1>I'm an h1</h1>
       <ul class="social-list">
         <li>
-          <a href="http://example.com/" class="social-link">Link</a>
+          <a href="http://example.com/" class="social-link">Fb</a>
         </li>
         <li>
-          <a href="http://example.com/" class="social-link">Link</a>
+          <a href="http://example.com/" class="social-link">Tw</a>
         </li>
         <li>
-          <a href="http://example/com/" class="social-link">Link</a>
+          <a href="http://example/com/" class="social-link">Gh</a>
         </li>
       </ul>
     </div>
@@ -101,8 +115,9 @@
     <h2>I'm an h2</h2>
     <div class="bio-wrapper">
       <div class="bio-box">
+        <img src="http://placekitten.com/g/400/400">
         <h3>Michael Hartl</h3>
-        <a href="http://twitter.com/mhartl" class="social-link">here</a>
+        <a href="http://twitter.com/mhartl" class="social-link">Tw</a>
         <div class="bio-copy">
           <p>
             Known for his dazzling charm, rapier wit, and unrivaled humility,
@@ -121,8 +136,9 @@
       </div>
       
       <div class="bio-box">
+        <img src="http://placekitten.com/g/400/400">
         <h3>Lee Donahoe</h3>
-        <a href="https://twitter.com/leedonahoe" class="social-link">here</a>
+        <a href="https://twitter.com/leedonahoe" class="social-link">Tw</a>
         <div class="bio-copy">
           <p>
             When he's not literally swimming with sharks or hunting powder stashes on
@@ -134,8 +150,9 @@
       </div>
       
       <div class="bio-box">
+        <img src="http://placekitten.com/g/400/400">
         <h3>Nick Merwin</h3>
-        <a href="https://twitter.com/nickmerwin" class="social-link">here</a>
+        <a href="https://twitter.com/nickmerwin" class="social-link">Tw</a>
         <div class="bio-copy">
           <p>
             You may have seen him shredding guitar live with Capital Cities on Jimmy
@@ -147,6 +164,7 @@
       </div>
       
       <div class="bio-box">
+        <img src="http://placekitten.com/g/400/400">
         <h3>??</h3>
         <p>
           The Future
