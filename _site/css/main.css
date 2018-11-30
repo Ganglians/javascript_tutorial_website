@@ -1,4 +1,8 @@
 /* GLOBAL STYLES */
+a {
+  color: #f00; /* shorthand for #ff0000 a.k.a. red */
+}
+
 body { /* modern-touch to fonts */
   font-family: helvetica, arial, sans;
 }
@@ -21,14 +25,18 @@ h2 ~ p {
   text-align: center;
 }
 
-a {
-  color: #f00; /* shorthand for #ff0000 a.k.a. red */
+html {
+  box-shadow: 0 0 0 30px #000 inset;
+  padding: 0 30px;
 }
 
 /* HEADER STYLES */
 .header {
   background-color: #000;
   color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 20;
 }
 
 .header-logo {
@@ -36,6 +44,7 @@ a {
   box-sizing: border-box;
   display: block;
   height: 10vh;
+  left: -30px;
   padding-top: 10px;
   position: relative;
   text-align: center;
@@ -76,7 +85,7 @@ a {
 
 .header-logo:hover,
 .header-logo:active {
-  color: #ed6e2f;
+  background-color: #ed6e2f;
 }
 
 .header-nav > li:first-child a {
