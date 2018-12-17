@@ -1,21 +1,26 @@
 /* GLOBAL STYLES */
-a {
-  color: #f00; /* shorthand for #ff0000 a.k.a. red */
+html {
+  box-shadow: 0 0 0 30px #000 inset;
+  padding: 0 30px;
 }
 
 body { /* modern-touch to fonts */
   font-family: helvetica, arial, sans;
 }
 
-/* html, body { /* redundant with style resets above ^ /
-  margin: 0;
-  padding: 0;
-} */
-
 h1 {
   font-size: 7vw;
   margin-top: 0;
 }
+
+a {
+  color: #f00; /* shorthand for #ff0000 a.k.a. red */
+}
+
+/* html, body { /* redundant with style resets above ^ /
+  margin: 0;
+  padding: 0;
+} */
 
 h2 ~ p {
   font-size: 0.8em;
@@ -25,18 +30,13 @@ h2 ~ p {
   text-align: center;
 }
 
-html {
-  box-shadow: 0 0 0 30px #000 inset;
-  padding: 0 30px;
-}
-
 /* HEADER STYLES */
 .header {
   background-color: #000;
   color: #fff;
   position: fixed;
   width: 100%;
-  z-index: 20;
+  z-index: 1;
 }
 
 .header-logo {
@@ -77,14 +77,17 @@ html {
 
 .header-nav a {
   color: #fff;
+}
+
+.nav-links a {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: uppercase;  
 }
 
-.header-nav a:hover,
-.header-nav a:active {
+.nav-links a:hover,
+.nav-links a:active {
   color: #ed6e2f;
 }
 
@@ -96,6 +99,36 @@ html {
   color: #fff;
 }
 
+/* FOOTER STYLES */
+.footer {
+  background-color: #000;
+  padding: 10vh 0 15vh;
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 50px;
+}
+
+.footer h3 {
+  color: #fff;
+  padding-top: 1.5em;
+  text-transform: uppercase;
+}
+
+.footer h3 span {
+  color: #aaa;
+}
+
+.footer-nav li {
+  display: inline-block;
+  margin: 2em 1em 0;
+}
+
+.footer-nav a {
+  color: #ccc;
+}
+
 /* HERO STYLES */
 .full-hero {
   background-color: #c7dbfc;
@@ -103,6 +136,12 @@ html {
 }
 
 /* SOCIAL STYLES */
+.social-list {
+  list-style: none; /* remove conventional ul styling */
+  padding: 0;
+  text-align: center;
+}
+
 .social-link {
   background: rgba(150, 150, 150, 0.5);
   border-radius: 99px;
@@ -121,12 +160,6 @@ html {
   width: 2.5em;
 }
 
-.social-list {
-  list-style: none; /* remove conventional ul styling */
-  padding: 0;
-  text-align: center;
-}
-
 .social-list > li { /* child selector */
   display: inline-block;
   margin: 0 0.5em;
@@ -135,7 +168,7 @@ html {
 /* BIO STYLES */
 .bio-wrapper {
   font-size: 24px; 
-  margin: 0 auto 1em; /* auto centers right and left sides */
+  margin: auto; /* auto centers right and left sides */
   max-width: 960px;
   overflow: hidden;
 }
@@ -155,7 +188,7 @@ html {
   float: left;
   font-size: 1rem;
   margin: 40px 1% 0; /* top=40px, left=1%, bottom=0, right=1%(fill) */
-  padding: 0 2% 2%;
+  padding: 2%;
   width: 23%; /* fit in one row i.e. 25% - 1% - 1% from margin */
 }
 
@@ -177,7 +210,6 @@ html {
 
 .bio-copy {
   font-size: 1em;
-  line-height: 1.5;
 }
 
 .bio-copy a {
