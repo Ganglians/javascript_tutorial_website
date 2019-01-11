@@ -13,8 +13,16 @@ h1 {
   margin-top: 0;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 a {
-  color: #f00; /* shorthand for #ff0000 a.k.a. red */
+  color: #6397b5; /* shorthand for #ff0000 a.k.a. red */
+}
+
+p {
+  line-height: 1.5;
 }
 
 /* html, body { /* redundant with style resets above ^ /
@@ -140,12 +148,14 @@ h2 ~ p {
 
 .full-hero:after {
   bottom: 2vh;
-  color: #fff;
-  content: "﹀";
-  font-size: 36px;
+  border: 10px solid;
+  border-color: #fff transparent transparent;
+  content: "";
+  height: 0;
   left: 50%;
   position: absolute;
   transform: translate(-50%, 0);
+  width: 0;
 }
 
 .hero-home {
@@ -208,12 +218,36 @@ h2 ~ p {
   margin: 0 0.5em;
 }
 
+/* HOMEPAGE STYLES */
+.home-section {
+  margin: 6rem auto; /* Trick from 4.6.1 to keep centered */
+  max-width: 980px;
+  width: 90vw;
+}
+.home-section h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.home-callout {
+  background-color: #000;
+  color: #fff;
+  padding: 7vh 0;
+}
+.callout-title {
+  font-size: 5.75vw;
+  text-align: right;
+  text-transform: uppercase;
+}
+.callout-copy {
+  font-size: 0.8rem;
+}
+
 /* BIO STYLES */
 .bio-wrapper {
   font-size: 24px; 
   margin: auto; /* auto centers right and left sides */
   max-width: 960px;
-  overflow: hidden;
+  overflow: hidden; /* clear floats within the wrapper */
 }
 
 /* .bio-wrapper:after { /* invisible element used to clear floated element / 
@@ -226,13 +260,13 @@ h2 ~ p {
 } */
 
 .bio-box {
-  border: 1px solid #000; /* black */
+  /* border: 1px solid #000; /* black */
   box-sizing: border-box; /* ensure box stays at set dimensions */
   float: left;
   font-size: 1rem;
-  margin: 40px 1% 0; /* top=40px, left=1%, bottom=0, right=1%(fill) */
-  padding: 2%;
-  width: 23%; /* fit in one row i.e. 25% - 1% - 1% from margin */
+  margin: 6rem 0 0; /* top=6rem, left=0, bottom=0, right=0(fill) */
+  padding: 0 3%;
+  width: 33%; /* fit in one row */
 }
 
 .bio-box h3 {
@@ -240,6 +274,7 @@ h2 ~ p {
   font-size: 1.5em;
   margin: -40px 0 1em;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .bio-box img {
@@ -248,11 +283,11 @@ h2 ~ p {
 
 .bio-box .social-link { /* fixes social link spacing/overlap */
   display: block;
-  margin: 2em 0 1em;
+  margin: 2em auto 1em; /* keeps it centered */
 }
 
 .bio-copy {
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 .bio-copy a {
