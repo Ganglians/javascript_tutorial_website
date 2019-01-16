@@ -3,7 +3,11 @@
   {% include head.html %} <!-- Liquid-style include -->
   <body>
     {% include header.html %} <!-- for navigaton & branding -->
-    {{ content }}
+    
+    <div class = "content-container"> <!-- div makes flexbox item of content -->
+      {{ content }}
+    </div>
+    
     {% include footer.html %}
   </body>
 </html>
