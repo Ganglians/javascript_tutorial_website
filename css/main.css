@@ -12,7 +12,8 @@ body {
 }
 
 .content-container {
-  flex-grow: 1;
+  display: flex; /* a flex item can also be a flex box*/
+  flex: 1 1 auto; /* flex shorthand <grow> <shrink> <basis>*/
   padding-top: 10vh;
   width: 100%;
 }
@@ -147,6 +148,33 @@ h2 ~ p {
   color: #ccc;
 }
 
+/* COLUMN STYLES */
+.col-three {
+  display: flex;
+  flex: 1; /* equivalent to flex grow & shrink of 1 and basis 0 */
+}
+
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+
+.col-three .col-content {
+  flex: 1;
+}
+
+.col-three .col-aside {
+  flex: 0 1 20em;
+}
+
 /* HERO STYLES */
 .full-hero {
   background-color: #c7dbfc;
@@ -248,16 +276,16 @@ h2 ~ p {
 }
 
 .callout-title {
-  flex-grow: 1;
-  flex-basis: 0; 
+  /*flex: 1 1 0;*/
+  flex: 1; /* cryptic way of seting grow & shrink to 1, & basis to 0 */
   font-size: 5.75vw;
   text-align: right;
   text-transform: uppercase;
 }
 
 .callout-copy {
-  flex-shrink: 0; /* won't shrink to fit to available space */
-  flex-basis: 45em;
+  /* flex-shrink: 0; /* won't shrink to fit to available space */
+  flex: 0 0 45em;
   padding: 0 3vw;
   font-size: 0.8rem;
 }
