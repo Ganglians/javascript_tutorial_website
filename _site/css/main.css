@@ -49,6 +49,12 @@ h2 ~ p {
   text-align: center;
 }
 
+h4 {
+  color: #999; /* A light-gray */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 /* HEADER STYLES */
 .header {
   background-color: #000;
@@ -173,6 +179,40 @@ h2 ~ p {
 
 .col-three .col-aside {
   flex: 0 1 20em;
+}
+
+.col-two {
+  display: flex; /* make this label the flexbox */
+}
+
+.col-two .col-aside {
+  flex: 0 0 20em; /* sidebar that stays 20em and doesnt shrink/expand */
+  order: 1; /* makes it so it's to the right of the page */
+}
+
+.col-two .col-content {
+  flex: 1; /* same as flex: 1 1 0, grows and shrinks with page */
+}
+
+/* PAGE STYLES */
+.page {
+  margin: 10vh auto 15vh; /* left/right centered w/ auto */
+  max-width: 980px; /* keep page 40-70 chars; easier to read */
+  width: 85vw; /* starting width */
+}
+
+.page h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.page h2 {
+  margin-bottom: 0.5em; 
+}
+
+.page h4 {
+  margin-bottom: 1em;  
 }
 
 /* HERO STYLES */
@@ -380,9 +420,64 @@ h2 ~ p {
 }
 
 .gallery-info {
-  font-size 0.8rem;
+  font-size: 0.8rem;
 }
 
 .gallery-info h3 {
   margin-bottom: 1em;
+}
+
+/* BLOG STYLES */
+.blog-recent {
+  text-align: right; /* aligns recent posts' text to the right */
+}
+
+.blog-title-list {
+  list-style: none; /* remove bullet-point style */
+  padding: 0;
+}
+
+.blog-title-list li ~ li {
+  margin-top: 1.5em; /* spaces out recent post list items */  
+}
+
+.blog-title-list span {
+  color: #999; /* changes text in list to a light gray */
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 0.5em; /* spaces blog post title from posted date */
+}
+
+.blog-posts ~ .blog-posts {
+  border-top: 1px dotted rgba(0, 0, 0, 0.1); /* separate posts w/ line */
+  margin-top: 4em; /* space post from one above by 4em */
+  padding-top: 4em; /* space post from line above by 4em */
+}
+
+.blog-posts .post-header {
+  font-size: 0.8rem; /* make blog post's header font smaller */
+}
+
+.post-header {
+  margin-bottom: 1.5em; /* space header from paragraph(s)*/
+}
+
+.post-header img,
+.post-header .social-link {
+  margin-right: 0.5em; /* add a little space to the right */
+}
+
+.post-header img {
+  border-radius: 99px; /* circular images */ 
+  display: inline-block;
+  height: 2.5em; /* shrinks larger images */
+  vertical-align: middle; /* centers the image vertically */
+}
+
+.posts-image {
+  background-position: center;
+  background-size: cover;
+  height: 6em;
+  margin-bottom: 1.5em;
 }
