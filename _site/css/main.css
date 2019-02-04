@@ -475,7 +475,7 @@ h4 {
   vertical-align: middle; /* centers the image vertically */
 }
 
-.posts-image {
+.posts-image { /* give dimensions so you can see bg image*/
   background-position: center;
   background-size: cover;
   height: 6em;
