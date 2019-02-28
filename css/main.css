@@ -235,6 +235,12 @@ h4 {
   width: 0;
 }
 
+.half-hero {
+  background-position: center center;
+  background-size: cover;
+  height: 40vh;
+}
+
 .hero-home {
   background-image: url(/images/shark.jpg);
   background-position: 30% center;
@@ -290,14 +296,14 @@ h4 {
   width: 2.5em;
 }
 
-.social-list > li { /* child selector */
+.social-list > li { /* immediate child selector */
   display: inline-block;
   margin: 0 0.5em;
 }
 
 /* HOMEPAGE STYLES */
 .home-section {
-  margin: 6rem auto; /* Trick from 4.6.1 to keep centered */
+  margin: 6rem auto; /* trick from 4.6.1 to keep centered */
   max-width: 980px;
   width: 90vw;
 }
@@ -328,6 +334,25 @@ h4 {
   flex: 0 0 45em;
   padding: 0 3vw;
   font-size: 0.8rem;
+}
+
+.home-section h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.home-section h4 {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.home-section .post-header {
+  text-align: center;
+}
+
+.home-section .blog-posts {
+  margin: auto;
+  width: 75%;
 }
 
 /* BIO STYLES */
@@ -383,12 +408,12 @@ h4 {
 }
 
 /* GALLERY STYLES */
-.gallery-thumbs {
-  height: 90vh;
-  overflow: scroll;
+.gallery-thumbs { 
+  height: 90vh; /* absolute height */
+  overflow: scroll; /* makes thumbnais scrollable when overflowed */
 }
 
-.gallery-thumbs > div {
+.gallery-thumbs > div { /* cursor changes appearance over a thumbnail */
   cursor: pointer;
 }
 
@@ -398,25 +423,29 @@ h4 {
   display: inline-block;
   margin: 0 0 10px;
   opacity: 0.5;
-  transition: all 0.5s ease-in-out;
-  width: 100%;
+  transition: all 0.5s ease-in-out; /* 3rd arg: run slower at beginning & end */
+  width: 100%; /* max width limited to width of gallery-thumbs column */
 }
 
-.gallery-thumbs img:hover {
+.gallery-thumbs img:hover { /* opaque image when curser hovers it */
   opacity: 1;
 }
 
-.gallery-thumbs .current img {
-  box-shadow: 0 0 0 5px #ed6e2f;
+.gallery-thumbs .current { 
+  cursor: default; /* cursor remains unchanged if image is currently focused */
+}
+
+.gallery-thumbs .current img { /* currently selected thumbnail */
+  box-shadow: 0 0 0 5px #ed6e2f; /* orange border */
   opacity: 1;
 }
 
 .gallery-photo {
-  position: relative;
+  position: relative; /* does nothing by itself unless specified */
 }
 
 .gallery-photo img {
-  width: 100%;
+  width: 100%; /* fill/shrink to full width of center column */
 }
 
 .gallery-info {
@@ -477,7 +506,73 @@ h4 {
 
 .posts-image { /* give dimensions so you can see bg image*/
   background-position: center;
-  background-size: cover;
-  height: 6em;
+  background-size: cover; /* Resize bg image to same size as container */
+  height: 6em; /* image not visible without height specified */
   margin-bottom: 1.5em;
+}
+
+.post {
+  width: 100%; /* takes up entire parent element's width */
+}
+
+.post-content,
+.post-footer {
+  margin: auto; /* horizontal centering to parent container */
+  max-width: 40em; /* 40 times the size of current font */
+  width: 85vw; /* 85% of page's browser window size */
+}
+
+.pull-left {
+  float: left;
+  margin: 2em 2em 2em -2%;
+}
+
+.pull-right {
+  float: right;
+  margin: 2em -2% 2em 2em;
+}
+
+.post-aside {
+  background-color: rgba(0, 0, 0, 0.01);
+  float: right;
+  margin: 0 0 2em 2em;
+  padding: 2em;
+}
+
+.post .post-header {
+  margin-bottom: 2.5em;
+  text-align: center;
+}
+
+.post-content {
+  font-size: 1.1rem;
+}
+
+.post-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  font-size: 0.8em;
+  margin-top: 3em;
+  padding-top: 2em;
+}
+
+.post-byline {
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  html {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .post-aside {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .half-hero {
+    display: none; 
+  }
 }
