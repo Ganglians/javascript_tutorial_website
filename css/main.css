@@ -560,19 +560,125 @@ h4 {
   text-align: left;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) { /* [reduced space | mobile] media query */
   html {
     box-shadow: none;
-    padding: 0;
+    padding: 0; /* remove black border on left and right */
+  }
+    
+  /* HEADER STYLES */
+  .header-nav {
+    /* smaller padding lets navigation menu fit without it bleeding over to the
+    next line(menu leans towards top-right instead of bottom-left) */
+    padding: 2vh 1em 0 0;
   }
   
+  .header-nav > li {
+    /* reduce the left margin, brings items closer together */
+    margin-left: 0.25em;
+  }
+  
+  .header-nav > li ~ li {
+    /* reduce left padding from 1 to 0.25em (same effect as margin) */
+    padding-left: 0.25em;
+  }
+  
+  .nav-links a {
+    /* increase font for ease of reading in smaller screen */
+    font-size: 3.25vw;  
+  }
+  
+  .header-logo {
+    /* keeps logo visible in smaller screen */
+    left: auto;
+  }
+  
+  /* HOME STYLES */
+  .home-callout {
+    /* stacks home callout section (title above paragraph for more space) */
+    flex-direction: column;
+  }
+  
+  .callout-copy {
+    /* flex: 1 1 0 shorthand, grow and shrink at same rate as container */
+    flex: 1;
+  }
+  
+  /* getting rid of the widths and dropping the float makes all the content
+  stretch to fill the page */
+  .bio-box {
+    float: none;
+    font-size: 1.3rem;
+    width: auto;
+  }
+  
+  /* BLOG STYLES */
   .post-aside {
+    /* remove recent post list (not essential, just nice to have if you can) */
     display: none;
+  }
+  
+  /* GALLERY STYLES */
+  /* only changing gallery's layout to become a single column  */
+  .gallery {
+    /*  change layout to be vertical */
+    flex-direction: column;  
+  }
+  
+  .gallery .col {
+    /* reduce padding  */
+    padding: 1em;
+  }
+  
+  .gallery .gallery-thumbs {
+    /* instead of set width through a flex-basis, expand to fill space */
+    flex: 1;
+    /* get rid of height we set before (flexbox is gonna grow and shrink with 
+    the page now) */
+    height: auto;
+    /* stops thumbnails from becoming multiple rows if there's lots of them  */
+    white-space: nowrap;
+    /* give flexbox element a fixed width so it will horizontally scroll if
+    there's lots of thumbnails */
+    width: 100vw;
+  }
+  
+  .gallery-thumbs > div {
+    /* makes all thumbnails go on one line instead of having a newline after
+    each one (since they're block elements) */
+    display: inline-block;
+  }
+  
+  .gallery-thumbs img {
+    /* thumbnails have a set height instead of a set width */
+    height: 7vh;
+    /* give thumbnails a bit of spacing to the right*/
+    margin: 0 10px 0 0;
+    width: auto;
+  }
+  
+  .gallery .gallery-info {
+    /* instead of set width through a flex-basis, expand to fill space */
+    flex: 1;
+  }
+  
+  /* BLOG STYLES */
+  .blog-recent {
+    /* hide the aside so it doesn't take up unessesary space (not an essential
+    feature */
+    display: none;
+  }
+  
+  .blog-previews {
+    /* get rid of padding around list of blog previews, it'll just take up space
+    in a small screen */
+    padding: 0;
   }
 }
 
-@media (max-width: 600px) {
+/* 9.1 exercise addition */
+/* @media (max-width: 600px) {
   .half-hero {
     display: none; 
   }
-}
+} */
