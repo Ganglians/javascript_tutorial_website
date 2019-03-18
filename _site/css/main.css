@@ -113,7 +113,8 @@ h4 {
 
 /* added so link style can be applied to any element */
 .nav-links a, 
-.drop-trigger {
+.drop-trigger,
+.show-mobile-menu {
   font-size: 0.8rem;
   font-weight: bold;
   text-decoration: none;
@@ -801,16 +802,78 @@ like a comment bubble /
   height to zero and setting its contents to hidden so you can't see them
   even though the container is gone */
   .header-nav {
+    /* gives menu gray background */
+    background-color: #444;
+    box-sizing: border-box;
+    left: 0;
     max-height: 0;
     overflow: hidden;
     padding: 0;
+    /* will be positioned relative to it's 'relative'ly positioned parent */
+    position: absolute;
+    text-align: center;
+    /* 10vh from parent's top, in this case the black bar */
+    top: 10vh;
     transition: all 0.5s ease-in-out;
+    /* makes menu take up entire viewable screen width, and leaves menu items
+    nicely centered */
+    width: 100vw;
+    z-index: 9;
+  }
+  
+  .header-nav li {
+    /* turns list items horizontal */
+    display: block;
+    /* spaces out each list element from the previous */
+    margin-top: 1em;
+  }
+  
+  .header-nav li ~li {
+    /* removing so everything is centered in an exact sense */
+    border: 0;
+    padding: 0;
+  }
+  
+  .header-nav li:last-child {
+    margin-bottom: 1em;
+  }
+  
+  .header-nav li:first-child a {
+    /* first menu item is no longer orange, it's white like rest of them */
+    color: #fff;
+  }
+  
+  /* hide dropdown in the nav menu */
+  /* doesn't work anyways since you can't hover on a touchscreen */
+  .header-nav .dropdown:hover .drop-menu,
+  .header-nav .drop-trigger:after {
+    display: none;
+  }
+  
+  /* undo rest of dropdown stylings */
+  .header-nav .drop-trigger {
+    /* undo padding that was set aside for the triangle */
+    padding-right: 0;
   }
   
   /* sets the header navigation container to expand to fit contents and a
   number as large as 1000px should be a good upper limit */
+  /* allows for a more captivating 'sliding-in' animation when the menu 
+  checkbox is clicked on */
   .mobile-menu-check:checked ~ .header-nav {
-    max-height: 1000px;
+    max-height: 90vh;
+  }
+  
+  /* adds an orange 'close' option that covers the 'menu' option */
+  .mobile-menu-check:checked ~ .show-mobile-menu:after {
+    background-color: #000;
+    color: #ed6e2f;
+    content: "CLOSE";
+    left: 0;
+    position: absolute;
+    top: 1.5em;
+    width: 100%;
+    text-align: center;
   }
   
   /* HOME STYLES */
