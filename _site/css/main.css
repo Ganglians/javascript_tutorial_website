@@ -7,8 +7,8 @@ html {
 body { 
   display: flex;
   flex-direction: column;
+  font-family: 'Open Sans', arial, sans; /* modern-touch to fonts */
   min-height: 100vh;
-  font-family: helvetica, arial, sans; /* modern-touch to fonts */
 }
 
 .content-container {
@@ -53,6 +53,11 @@ h4 {
   color: #999; /* A light-gray */
   font-weight: bold;
   text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', helvetica, sans;
+  font-weight: 100;
 }
 
 /* HEADER STYLES */
@@ -480,15 +485,15 @@ like a comment bubble /
   color: #fff; /* white */
   display: inline-block;
   font-family: helvetica, arial, sans;
-  font-size: 1rem;
+  font-size: 1.7em;
   font-weight: bold;
-  height: 2.5em;
+  height: 1.5em;
   line-height: 1;
-  padding-top: 0.85em;
+  padding-top: 0.25em;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  width: 2.5em;
+  width: 1.5em;
 }
 
 .social-list > li { /* immediate child selector */
