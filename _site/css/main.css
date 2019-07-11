@@ -7,7 +7,8 @@ html {
 body { 
   display: flex;
   flex-direction: column;
-  font-family: 'Open Sans', arial, sans; /* modern-touch to fonts */
+  /* ADD1 */
+  font-family: 'Open Sans', helvetica, arial, sans; /* modern-touch to fonts */
   min-height: 100vh;
 }
 
@@ -18,6 +19,11 @@ body {
   width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', helvetica, sans;
+  font-weight: 100;
+}
+
 h1 {
   font-size: 7vw;
   margin-top: 0;
@@ -25,6 +31,12 @@ h1 {
 
 h2 {
   font-size: 2em;
+}
+
+h4 {
+  color: #999; /* A light-gray */
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 a {
@@ -49,17 +61,6 @@ h2 ~ p {
   text-align: center;
 }
 
-h4 {
-  color: #999; /* A light-gray */
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', helvetica, sans;
-  font-weight: 100;
-}
-
 /* HEADER STYLES */
 .header {
   background-color: #000;
@@ -70,29 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   width: 100%;
   z-index: 20;
-}
-
-.header-logo {
-  background-color: #000;
-  /* allows us to include padding and border in element's total width and
-  height */
-  box-sizing: border-box;
-  display: block;
-  height: 10vh;
-  left: -30px;
-  padding-top: 10px;
-  position: relative;
-  text-align: center;
-  width: 10vh;
-}
-
-.header-logo:hover,
-.header-logo:active {
-  background-color: #ed6e2f; /* light orange */
-}
-
-.header-logo img {
-  width: 4.3vh;
 }
 
 .header-nav {
@@ -143,6 +121,31 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
+.header-logo {
+  background-color: #000;
+  /* allows us to include padding and border in element's total width and
+  height */
+  box-sizing: border-box;
+  display: block;
+  height: 10vh;
+  left: -30px;
+  padding-top: 10px;
+  position: relative;
+  text-align: center;
+  width: 10vh;
+}
+
+.header-logo img {
+  width: 4.3vh;
+  /*height: 80%;
+  width: auto;*/
+}
+
+.header-logo:hover,
+.header-logo:active {
+  background-color: #ed6e2f; /* light orange */
+}
+
 /* DROPDOWN STYLES */
 .dropdown {
   /* done so that the submenu can be positioned below it using position:
@@ -153,6 +156,12 @@ h1, h2, h3, h4, h5, h6 {
 /* displays menu when a user hovers over an element using the dropdown class */
 .dropdown:hover .drop-menu {
   display: block;
+}
+/* ADD2 */
+/* changes border-color to a light orange when a user hovers over an element 
+   using the dropdown class*/
+.dropdown:hover .drop-trigger:after {
+  border-color: #ed6e2f transparent transparent;
 }
 
 .drop-trigger {
@@ -255,10 +264,14 @@ making the text orange like the nav menu */
   color: #333;
 }
 
-/* MOBILE MENU */
-.mobile-menu-check,
-.show-mobile-menu {
+/* HIDE IN THE FOOTER */
+.footer .dropdown:hover .drop-menu,
+.footer .drop-trigger:after {
   display: none;
+}
+
+.footer .drop-trigger {
+  padding-right: 0;
 }
 
 /* FOOTER MODIFICATIONS */
@@ -313,14 +326,10 @@ like a comment bubble /
   width: 0;
 }*/
 
-/* HIDE IN THE FOOTER */
-.footer .dropdown:hover .drop-menu,
-.footer .drop-trigger:after {
+/* MOBILE MENU */
+.mobile-menu-check,
+.show-mobile-menu {
   display: none;
-}
-
-.footer .drop-trigger {
-  padding-right: 0;
 }
 
 /* FOOTER STYLES */
@@ -328,6 +337,11 @@ like a comment bubble /
   background-color: #000;
   padding: 10vh 0 15vh;
   text-align: center;
+}
+
+/* ADD3 */
+.footer img {
+  width: 50px;
 }
 
 .footer-logo img {
@@ -424,9 +438,11 @@ like a comment bubble /
 }
 
 .full-hero:after {
-  bottom: 2vh;
   border: 10px solid;
   border-color: #fff transparent transparent;
+  bottom: 2vh;
+  /* ADD4 */
+  color: #fff;
   content: "";
   height: 0;
   left: 50%;
@@ -435,15 +451,11 @@ like a comment bubble /
   width: 0;
 }
 
-.half-hero {
-  background-position: center center;
-  background-size: cover;
-  height: 40vh;
-}
-
 .hero-home {
   background-image: url(/images/shark.jpg);
   background-position: 30% center;
+  /* ADD5 */
+  background-position: center top;
 }
 
 .hero-content {
@@ -463,7 +475,7 @@ like a comment bubble /
 
 .hero-content .social-link {
   background-color: rgba(255, 255, 255, 0.8);
-  color: #557c83;
+  color: #556c83;
 }
 
 .hero-content .social-link:hover {
@@ -471,13 +483,13 @@ like a comment bubble /
   color: #fff;
 }
 
-/* SOCIAL STYLES */
-.social-list {
-  list-style: none; /* remove conventional ul styling */
-  padding: 0;
-  text-align: center;
+.half-hero {
+  background-position: center center;
+  background-size: cover;
+  height: 40vh;
 }
 
+/* SOCIAL STYLES */
 .social-link {
   background: rgba(150, 150, 150, 0.5);
   border-radius: 99px;
@@ -494,6 +506,12 @@ like a comment bubble /
   text-decoration: none;
   vertical-align: middle;
   width: 1.5em;
+}
+
+.social-list {
+  list-style: none; /* remove conventional ul styling */
+  padding: 0;
+  text-align: center;
 }
 
 .social-list > li { /* immediate child selector */
@@ -513,11 +531,25 @@ like a comment bubble /
   text-align: center;
 }
 
+.home-section h4 {
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.home-section .post-header {
+  text-align: center;
+}
+
+.home-section .blog-posts {
+  margin: auto;
+  width: 75%;
+}
+
 .home-callout {
-  display: flex;
   align-items: center;
   background-color: #000;
   color: #fff;
+  display: flex;
   padding: 7vh 0;
 }
 
@@ -532,27 +564,8 @@ like a comment bubble /
 .callout-copy {
   /* flex-shrink: 0; /* won't shrink to fit to available space */
   flex: 0 0 45em;
-  padding: 0 3vw;
   font-size: 0.8rem;
-}
-
-.home-section h2 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.home-section h4 {
-  margin-bottom: 0.5em;
-  text-align: center;
-}
-
-.home-section .post-header {
-  text-align: center;
-}
-
-.home-section .blog-posts {
-  margin: auto;
-  width: 75%;
+  padding: 0 3vw;
 }
 
 /* BIO STYLES */
@@ -605,7 +618,7 @@ like a comment bubble /
 
 .bio-copy a {
   color: #008000; /* green */
-}
+} 
 
 /* GALLERY STYLES */
 .gallery-thumbs { 
@@ -631,14 +644,14 @@ like a comment bubble /
   opacity: 1;
 }
 
-.gallery-thumbs .current { 
-  cursor: default; /* cursor remains unchanged if image is currently focused */
-}
-
 .gallery-thumbs .current img { /* currently selected thumbnail */
   box-shadow: 0 0 0 5px #ed6e2f; /* orange border */
   opacity: 1;
 }
+
+/*.gallery-thumbs .current { 
+  cursor: default; /* cursor remains unchanged if image is currently focused /
+}*/
 
 .gallery-photo {
   position: relative; /* does nothing by itself unless specified */
@@ -750,15 +763,16 @@ like a comment bubble /
 
 .post-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  font-style: italic;
   font-size: 0.8em;
+  font-style: italic;
   margin-top: 3em;
   padding-top: 2em;
 }
 
-.post-byline {
+/* ADD5*/
+/*.post-byline {
   text-align: left;
-}
+}*/
 
 @media (max-width: 800px) { /* [reduced space | mobile] media query */
   html {
@@ -767,6 +781,16 @@ like a comment bubble /
   }
     
   /* HEADER STYLES */
+  .nav-links a {
+    /* increase font for ease of reading in smaller screen */
+    font-size: 3.25vw;  
+  }
+  
+  .header-logo {
+    /* keeps logo visible in smaller screen */
+    left: auto;
+  }
+
   .header-nav {
     /* smaller padding lets navigation menu fit without it bleeding over to the
     next line(menu leans towards top-right instead of bottom-left) */
@@ -781,16 +805,6 @@ like a comment bubble /
   .header-nav > li ~ li {
     /* reduce left padding from 1 to 0.25em (same effect as margin) */
     padding-left: 0.25em;
-  }
-  
-  .nav-links a {
-    /* increase font for ease of reading in smaller screen */
-    font-size: 3.25vw;  
-  }
-  
-  .header-logo {
-    /* keeps logo visible in smaller screen */
-    left: auto;
   }
   
   /* MOBILE MENU */
@@ -866,7 +880,9 @@ like a comment bubble /
   /* allows for a more captivating 'sliding-in' animation when the menu 
   checkbox is clicked on */
   .mobile-menu-check:checked ~ .header-nav {
-    max-height: 90vh;
+    /*max-height: 90vh;*/
+    /* ADD6 */
+    max-height: 1000px;
   }
   
   /* adds an orange 'close' option that covers the 'menu' option */
@@ -876,9 +892,9 @@ like a comment bubble /
     content: "CLOSE";
     left: 0;
     position: absolute;
+    text-align: center;
     top: 1.5em;
     width: 100%;
-    text-align: center;
   }
   
   /* HOME STYLES */
@@ -898,12 +914,6 @@ like a comment bubble /
     float: none;
     font-size: 1.3rem;
     width: auto;
-  }
-  
-  /* BLOG STYLES */
-  .post-aside {
-    /* remove recent post list (not essential, just nice to have if you can) */
-    display: none;
   }
   
   /* GALLERY STYLES */
@@ -951,12 +961,25 @@ like a comment bubble /
   }
   
   /* BLOG STYLES */
+  /* ADD7 */
+  .blog-cols {
+    flex-direction: column;
+  }
+
   .blog-recent {
     /* hide the aside so it doesn't take up unessesary space (not an essential
     feature */
-    display: none;
+    /*display: none;*/
+    /* ADD 8 */
+    flex: 1;
+    text-align: center;
   }
   
+  .post-aside {
+    /* remove recent post list (not essential, just nice to have if you can) */
+    display: none;
+  }
+
   .blog-previews {
     /* get rid of padding around list of blog previews, it'll just take up space
     in a small screen */
