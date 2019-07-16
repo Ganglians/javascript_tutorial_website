@@ -9,16 +9,21 @@ function activateGallery() {
   inside a div containing the CSS id gallery-thumbs). */
   /*let thumbnails = document.querySelector("#gallery-thumbs").
                    querySelectorAll("img");*/
-  // Exercise 11.2.1 #2 Replace method chaining with angle bracket nesting
+  // Exercise 11.2.1 #2: Replace method chaining with angle bracket nesting.
   let thumbnails = document.querySelectorAll("#gallery-thumbs > div > img");           
   // Current main image
   let mainImage = document.querySelector("#gallery-photo img");
 
   /* Iterate through thumbnais and put an event listener on each. */
   thumbnails.forEach(function(thumbnail) {
+    // Exercise 11.4.2 #1: Preload large images.
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new image();
+    largeVersion.src = newImageSrc;
+
     thumbnail.addEventListener("click", function() {
       // Code to set clicked image as main image.
-      let newImageSrc = thumbnail.dataset.largeVersion;
+      //let newImageSrc = thumbnail.dataset.largeVersion;
       mainImage.setAttribute("src", newImageSrc);
 
       // Code to set clicked image alt as main alt
