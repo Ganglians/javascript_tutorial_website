@@ -18,7 +18,7 @@ function activateGallery() {
   thumbnails.forEach(function(thumbnail) {
     // Exercise 11.4.2 #1: Preload large images.
     let newImageSrc = thumbnail.dataset.largeVersion;
-    let largeVersion = new image();
+    let largeVersion = new Image();
     largeVersion.src = newImageSrc;
 
     thumbnail.addEventListener("click", function() {
